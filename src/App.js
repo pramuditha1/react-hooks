@@ -17,6 +17,7 @@ import CounterThree from './components/useReducer/CounterThree';
 import ComponentA1 from './components/useReducer/maintain-global-state/ComponentA'
 import ComponentB1 from './components/useReducer/maintain-global-state/ComponentB'
 import ComponentC1 from './components/useReducer/maintain-global-state/ComponentC'
+import DataFetching from './components/useReducer/fetching-data/DataFetching';
 
 export const UserContext = React.createContext()
 export const ChannelContext = React.createContext()
@@ -81,12 +82,16 @@ function App() {
       {/* <CounterThree/> */}
 
       {/* maintain global state using useContext + useReducer */}
-      <CountContext.Provider value={{countState: count, countDispatch: dispatch}}>
+      {/* <CountContext.Provider value={{countState: count, countDispatch: dispatch}}>
           <div>Count - {count}</div>
           <ComponentA1/>
           <ComponentB1/>
           <ComponentC1/>
-      </CountContext.Provider>
+      </CountContext.Provider> */}
+
+      {/* fetching data with useReducer */}
+      <DataFetching/>
+
 
     </div>
   );

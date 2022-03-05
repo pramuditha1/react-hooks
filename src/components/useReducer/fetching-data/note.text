@@ -1,0 +1,23 @@
+why useReducer  here ?
+    for state management.
+
+why useEffect here ?
+    for data fetching from server
+
+how to update state according to dataFetching?
+    if data fetching success dispatch reducer success action and payload.
+    if error in data fetching dispatch reducer an error with data fetching fail action
+
+implementation stpes
+    1. import useEffect, useReducer, axios
+    2. create initial state object
+    3. create reducer function which accepts state and action as parameters
+    4. call useReducer(reducer, initialState) that returns current state and dispatch method
+    5. implement useEffect hook and fetch data using axios.get
+        if dataFetch success dispatch({success_action, fetched_data})
+        if datafetch failed dispatch({fail_action, error_message})
+
+        that dispatch method call will talk to reducer function and update state according to the action type.
+        And return new state which is updated with payload values.
+
+    6. show state values in UI
