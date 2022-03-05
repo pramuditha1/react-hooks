@@ -1,0 +1,16 @@
+what is maintain global state.
+    implement useReducer hook within a component makes local storage. But across components we need to share state
+
+How can we share global state
+    it can done using props by passing state values and actions. But in large scale applications it is difficult to
+    handle.
+    Hence solution is useReducer hook + useContext hook
+
+How to implement a golbal counter for ComponentA, ComponentD, ComponentF
+    first implement counter reducer and initial state in App.js
+    pass initialstate and reducer function to useReducer and obtain return values countState and dispatch actions in App.js
+    create a countContext in App.js
+    **** now consume part and dispatch relevent actions in components
+    now goto component and import useContext and CountContext from App.js
+    add buttons and onclick dispatch actions with action type. should use parameter names passed in context provider
+        <button onClick={() => countContext.countDispatch('increment')}>Increment</button>
